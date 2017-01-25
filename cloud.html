@@ -1,0 +1,14 @@
+Sección CLOUD!
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect();
+  var room = "CloudApp";
+  socket.on('connect', function() {
+  	// Connected, let's sign-up for to receive messages for this room
+  	socket.emit('room', room);
+  });
+  socket.on('recibido', function(data) {
+  	console.log('Incoming message for CLOUD:', data);
+  });
+</script>

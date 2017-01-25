@@ -1,0 +1,8 @@
+socket:
+  container_name: socket
+  command: node server.js
+  build: .
+  volumes:
+    - ".:/usr/local/app"
+  ports:
+    - "3000:3000"

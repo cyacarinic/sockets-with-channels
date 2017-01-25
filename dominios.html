@@ -1,0 +1,14 @@
+Sección DOMINIOS!
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect();
+  var room = "DomainApp";
+  socket.on('connect', function() {
+  	// Connected, let's sign-up for to receive messages for this room
+  	socket.emit('room', room);
+  });
+  socket.on('recibido', function(data) {
+  	console.log('Incoming message for DOMAINS:', data);
+  });
+</script>
